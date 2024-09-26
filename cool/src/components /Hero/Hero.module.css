@@ -1,0 +1,59 @@
+.container {
+    position: relative;
+    align-items: center;
+    margin-top: 1%;
+    z-index: 1;
+    margin-right: 10%;
+}
+
+.imageContainer {
+    position: relative;
+}
+
+.firstRectangle {
+    margin-top: 10px;
+    margin-left: 60px;
+    max-width: 100%;
+    position: relative; /* Stack on top */
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.secondRectangle {
+    margin-top: 10px;
+    margin-left: 60px;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out, clip-path 0.3s ease-in-out;
+    opacity: 0; /* Initially hidden */
+    clip-path: inset(0 80% 0 0); /* Peek effect to show part of the image */
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    clip-path: inset(0 0 0 0); /* Expand to show the full image */
+}
+
+
+/* Add this to your Hero.module.css */
+
+
+
+@media screen and (max-width: 830px) {
+    .firstRectangle,
+    .secondRectangle {
+        margin: 1px;
+        position: static;
+        opacity: 1;
+    }
+    
+}
